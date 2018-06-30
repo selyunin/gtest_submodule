@@ -59,33 +59,33 @@ target_link_libraries(project1 project1_lib)
 
 # if (BUILD_TESTS)
 # This adds another subdirectory, which has 'project(gtest)'.
-# add_subdirectory(ext/gtest-1.8.0)
+add_subdirectory(./googletest)
 # 
-# enable_testing()
+enable_testing()
 # 
 # # Include the gtest library. gtest_SOURCE_DIR is available due to
 # # 'project(gtest)' above.
-# include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 # 
-# ########################################
-# # Test files
-# ########################################
-# file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
+########################################
+# Test files
+########################################
+file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 # ########################################
 # # Unit Tests
 # ########################################
-# add_executable(runUnitTests ${TEST_SRC_FILES})
+add_executable(runUnitTests ${TEST_SRC_FILES})
 # 
 # ########################################
 # # Standard linking to gtest stuff.
 # ########################################
-# target_link_libraries(runUnitTests gtest gtest_main)
-# 
-# ########################################
-# # Extra linking for the project.
-# ########################################
-# target_link_libraries(runUnitTests project1_lib)
-# 
+target_link_libraries(runUnitTests gtest gtest_main)
+
+########################################
+# Extra linking for the project.
+########################################
+target_link_libraries(runUnitTests project1_lib)
+
 # # This is so you can do 'make test' to see all your tests run, instead of
 # # manually running the executable runUnitTests to see those specific tests.
 # add_test(UnitTests runUnitTests)

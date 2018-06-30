@@ -5,6 +5,6 @@ void Project1::foo(int &i) {
 }
 
 
-void independentMethod(int &i) {
+void independentMethod(int &i){
 	i = 0;
 }
