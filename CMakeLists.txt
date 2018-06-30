@@ -10,11 +10,10 @@ project(${PROJECT_NAME})
 # * PROJECT_BINARY_DIR - Full path to build directory for project
 
 ########################################
-# Set up the compile flags
+# Set up the compiler flags
 ########################################
 set(CMAKE_CXX_FLAGS "-g -Wall")
 set(CMAKE_CXX_STANDARD 11)
-
 
 ########################################
 # Define include directories
@@ -50,35 +49,34 @@ add_executable(project1 ${PROJECT_SOURCE_DIR}/src/main.cpp src/message.cpp inclu
 ########################################
 target_link_libraries(project1 project1_lib)
 
-
 ########################################
 # Testing
 ########################################
 # Options. Turn on with 'cmake -Dmyvarname=ON'.
 # option(BUILD_TESTS "Build all tests." ON) # Makes boolean 'test' available.
 
-# if (BUILD_TESTS)
-# This adds another subdirectory, which has 'project(gtest)'.
+# google test is a git submodule for the project, and it is also cmake-based
 add_subdirectory(./googletest)
-# 
+
 enable_testing()
 # 
-# # Include the gtest library. gtest_SOURCE_DIR is available due to
-# # 'project(gtest)' above.
+# Include the gtest library. gtest_SOURCE_DIR is available due to
+# 'project(gtest)' above.
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
-# 
+ 
 ########################################
 # Test files
 ########################################
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
-# ########################################
-# # Unit Tests
-# ########################################
+
+########################################
+# Unit Tests
+########################################
 add_executable(runUnitTests ${TEST_SRC_FILES})
-# 
-# ########################################
-# # Standard linking to gtest stuff.
-# ########################################
+
+########################################
+# Standard linking to gtest stuff.
+########################################
 target_link_libraries(runUnitTests gtest gtest_main)
 
 ########################################
@@ -86,9 +84,9 @@ target_link_libraries(runUnitTests gtest gtest_main)
 ########################################
 target_link_libraries(runUnitTests project1_lib)
 
-# # This is so you can do 'make test' to see all your tests run, instead of
-# # manually running the executable runUnitTests to see those specific tests.
-# add_test(UnitTests runUnitTests)
+# This is so you can do 'make test' to see all your tests run, instead of
+# manually running the executable runUnitTests to see those specific tests.
+add_test(UnitTests runUnitTests)
 # 
 # set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/.travis/cmake)
 # 
