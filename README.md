@@ -16,25 +16,28 @@ in order to avoid copying google test in the current repo.
 
 ## Building the project
 1. Creating the executables follows standard `cmake` procedure:
-
+```
     mkdir build
     cd build && cmake ..
+```
 
 2. Compile the code (it will also compile the gtest for the first time):
-
+```
     make
+```
 
 3. Run executable:
-
+```
     ./project1
+```
 
 4. Cmake supports `add_test` function, then the tests can be launch 
 `make test` or `ctest` commands.
-
+```
     ./runUnitTests
+```
 
-
-# [Acknowledgement]
+## Acknowledgement
 The acknowledgments go to:
 * [Gunnar](https://github.com/gujans) and
  [this](https://github.com/gujans/travis-gtest-cmake-example)
@@ -51,3 +54,7 @@ repo. For setting up a repo with
 [cmake](https://cmake.org/).
 
 
+## Maintainer
+
+[Konstantin Selyunin](http://selyunin.com/), for
+suggestions/questions/comments please contact: selyunin [dot] k [dot] v [at] gmail [dot] com
