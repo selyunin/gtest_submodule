@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.8)
 ########################################
 set(PROJECT_NAME project1)
 project(${PROJECT_NAME})
-# After project(..) is called the following variables are available:
+# After project(..) is called, the following variables are available:
 # * PROJECT_SOURCE_DIR - Top level source directory for the project
 # * PROJECT_BINARY_DIR - Full path to build directory for project
 
@@ -87,15 +87,3 @@ target_link_libraries(runUnitTests project1_lib)
 # This is so you can do 'make test' to see all your tests run, instead of
 # manually running the executable runUnitTests to see those specific tests.
 add_test(UnitTests runUnitTests)
-
-# set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/.travis/cmake)
-# 
-# if (CMAKE_BUILD_TYPE STREQUAL "Coverage")
-#   include(CodeCoverage)
-#   setup_target_for_coverage(${PROJECT_NAME}_coverage runUnitTests coverage)
-# 
-#   SET(CMAKE_CXX_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
-#   SET(CMAKE_C_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
-# endif() #CMAKE_BUILD_TYPE STREQUAL "Coverage"
-# 
-# #endif()
