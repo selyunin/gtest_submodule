@@ -1,12 +1,19 @@
 [![Build Status](https://travis-ci.org/selyunin/gtest_submodule.svg?branch=master)](https://travis-ci.org/selyunin/gtest_submodule)
 
-# Cmake project with google test as a git submodule  and travis CI pipeline
+# Cmake + googletest (git submodule) + travis CI
 
-This is a cmake project which uses [googletest](https://github.com/google/googletest)
-as a git submodule, and sets up a [travis-ci](https://travis-ci.org/) pipeline for 
-running tests. I was inspired by the projects from the [acknowledgement](#acknowledgement)
-section, and at the sime time want improve on that: the goal is to use git submodules 
-in order to avoid copying google test in the current repo.
+A toy project showcasing the following features:
+* [`cmake`](https://cmake.org/)-based build for C++ project source files;
+* [googletest](https://github.com/google/googletest) 
+  as a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules);
+* [travis-ci](https://travis-ci.org/) pipeline for running tests. 
+
+In short, you see a C++ project that uses google test as a 
+git submodule and integrates a travis CI pipeline.
+
+I was inspired by the projects from the [acknowledgement](#acknowledgement)
+section, and at the sime time want improve on that: the goal is to use 
+git submodules in order to avoid copying google test in the current repo.
 
 ## Directory structure
 * [`CMakeLists.txt`](./CMakeLists.txt) cmake project files
