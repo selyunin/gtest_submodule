@@ -37,12 +37,12 @@ list(REMOVE_ITEM SRC_FILES ${PROJECT_SOURCE_DIR}/src/main.cpp)
 ########################################
 # Compile source files into a library
 ########################################
-add_library(project1_lib ${SRC_FILES} src/message.cpp include/message.h)
+add_library(project1_lib ${SRC_FILES})
 
 ########################################
 # Main is separate (e.g. library client)
 ########################################
-add_executable(project1 ${PROJECT_SOURCE_DIR}/src/main.cpp src/message.cpp include/message.h)
+add_executable(project1 ${PROJECT_SOURCE_DIR}/src/main.cpp)
 
 ########################################
 # linking Main against the library
