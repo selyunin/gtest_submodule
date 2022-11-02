@@ -1,9 +1,7 @@
-[![Build Status](https://travis-ci.org/selyunin/gtest_submodule.svg?branch=master)](https://travis-ci.org/selyunin/gtest_submodule)
-
 # Cmake + googletest (git submodule) + travis CI
 
 A toy project showcasing the following features:
-* [`cmake`](https://cmake.org/)-based build for C++ project source files;
+* [`cmake`](https://cmake.org/) build for C++ project source files;
 * [`googletest`](https://github.com/google/googletest) 
   as a [`git submodule`](https://git-scm.com/book/en/v2/Git-Tools-Submodules);
 * [`travis-ci`](https://travis-ci.org/) pipeline for running tests. 
