@@ -1,13 +1,17 @@
-# Cmake + googletest (git submodule) + travis CI
+# Cmake + googletest (git submodule) + Github actions
 
 A toy project showcasing the following features:
 * [`cmake`](https://cmake.org/) build for C++ project source files;
 * [`googletest`](https://github.com/google/googletest) 
   as a [`git submodule`](https://git-scm.com/book/en/v2/Git-Tools-Submodules);
-* [`travis-ci`](https://travis-ci.org/) pipeline for running tests. 
+* [`github-actions`](https://docs.github.com/en/actions) pipeline for running build and tests. 
 
 In short, you see a C++ project that uses google test as a 
-git submodule and integrates a travis CI pipeline.
+git submodule and integrates a Github CI pipeline 
+(which in Github-terms is called Github actions).
+
+Initially the pipeline run on travis CI. 
+In October 2022 I updated the repo to use Github Actions instead.
 
 I was inspired by the projects from the [acknowledgement](#acknowledgement)
 section, and at the sime time want improve on that: the goal is to use 
@@ -27,24 +31,28 @@ Otherwise from the project root repository one needs to download the submodules:
 ## Building the project
 1. Creating the executables follows standard `cmake` procedure:
 ```
-    mkdir build
-    cd build && cmake ..
+cmake -B build
 ```
 
 2. Compile the code (it will also compile the gtest for the first time):
 ```
-    make
+cmake --build build
 ```
 
 3. Run executable:
 ```
-    ./project1
+./build/project1
 ```
 
 4. Cmake supports `add_test` function, then the tests can be launch 
 `make test` or `ctest` commands.
 ```
-    ./runUnitTests
+./build/runUnitTests
+```
+
+alternatively, in the `build` directory, run:
+```
+ctest
 ```
 
 ## Acknowledgement
@@ -66,5 +74,5 @@ repo. For setting up a repo with
 
 ## Maintainer
 
-[Konstantin Selyunin](http://selyunin.com/), for
+[Dr. Konstantin Selyunin](https://selyunin.github.io/), for
 suggestions/questions/comments please contact: selyunin [dot] k [dot] v [at] gmail [dot] com
