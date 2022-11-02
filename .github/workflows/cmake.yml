@@ -21,6 +21,7 @@ jobs:
       - uses: einaregilsson/build-number@v3
         with:
           token: ${{secrets.github_token}}
+          submodules: recursive
 
       - name: Install compiler and packages
         shell: bash
