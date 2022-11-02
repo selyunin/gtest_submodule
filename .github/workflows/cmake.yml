@@ -38,10 +38,6 @@ jobs:
         # Note the current convention is to use the -S and -B options here to specify source
         # and build directories, but this is only available with CMake 3.13 and higher.
         run: |
-          ls -la
-          cd googletest
-          ls -la
-          pwd
           CXX_FLAGS="-Wall -Werror -Wno-variadic-macros -Wno-long-long -Wno-shadow"
           export CMAKE_OPTIONS="${CMAKE_OPTIONS} ${ENV_CMAKE_OPTIONS}"
           export CXX_FLAGS="${CXX_FLAGS} ${ENV_CXX_FLAGS}"
